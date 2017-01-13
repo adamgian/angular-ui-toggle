@@ -1,15 +1,15 @@
 {
-	"name": "angular-ui-toggle",
-	"author": "Adam Gian (https://github.com/adamgian)",
-	"license": "MIT",
-	"version": "0.0.1",
-	"main": "angular-ui-toggle.js",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/adamgian/angular-ui-toggle.git"
-	},
-	"dependencies": {
-		"angular": "^1.5.3",
-	},
-	"devDependencies" : {},
+    "name": "angular-ui-toggle",
+    "author": "Adam Gian (https://github.com/adamgian)",
+    "license": "MIT",
+    "version": "0.0.1",
+    "main": "angular-ui-toggle.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/adamgian/angular-ui-toggle.git"
+    },
+    "dependencies": {
+        "angular": "^1.5.3"
+    },
+    "devDependencies" : {}
 }
