@@ -6,9 +6,37 @@ An Apple iOS inspired toggle switch input control for [Angular 1](https://angula
 
 *A recreation of the toggle switch in iOS 7/8. Source: [Dribble](https://dribbble.com/shots/1109255--GIF-iOS-7-switch-3)*
 
+
+
+
 ## Install
 
-Download package from [Github](https://github.com/adamgian/angular-ui-toggle/archive/master.zip). Package is also available on NPM - `npm install angular-ui-toggle`.
+1. Download package directly from [Github](https://github.com/adamgian/angular-ui-toggle/archive/master.zip), unzip and place the files that are in `dist` (`angular-ui-toggle-min.js` and `angular-ui-toggle-min.css`) somewhere in your project directory.
+Alternatively, package is also available on [NPM](https://www.npmjs.com/package/angular-ui-toggle): `npm install angular-ui-toggle`.
+
+2. Add a reference to the script and stylesheet in your HTML.
+```html
+<!-- Stylesheet -->
+<head>
+    <link src="/yourDirectory/angular-ui-toggle-min.css" rel="stylesheet">
+</head>
+
+<!-- JavaScript -->
+<script href="/yourDirectory/angular-ui-toggle-min.js"></script>
+```
+
+3. Include module (`uiToggle`) in your Angular application.
+```js
+var app = angular.module('app', [
+    'uiToggle',
+    ...
+]);
+```
+
+4. angular-ui-toggle is now available for use – see usage section below for examples.
+
+
+
 
 ## Usage
 
