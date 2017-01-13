@@ -2,7 +2,7 @@
     "name": "angular-ui-toggle",
     "author": "Adam Gian (https://github.com/adamgian)",
     "license": "MIT",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": "angular-ui-toggle.js",
     "repository": {
         "type": "git",
