@@ -13,6 +13,10 @@
 	width: 60px;
 }
 
+.ui-toggle > input {
+	display: none;
+}
+
 .ui-toggle.checked {
 	background-color: #999 !important;
 	border-color: transparent !important;
