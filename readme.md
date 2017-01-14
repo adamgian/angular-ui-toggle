@@ -18,11 +18,11 @@ Alternatively, package is also available on [NPM](https://www.npmjs.com/package/
 ```html
 <!-- Stylesheet -->
 <head>
-    <link src="/yourDirectory/angular-ui-toggle-min.css" rel="stylesheet">
+    <link href="/yourDirectory/angular-ui-toggle-min.css" rel="stylesheet">
 </head>
 
 <!-- JavaScript -->
-<script href="/yourDirectory/angular-ui-toggle-min.js"></script>
+<script src="/yourDirectory/angular-ui-toggle-min.js"></script>
 ```
 
 3. Include module (`uiToggle`) in your Angular application.
