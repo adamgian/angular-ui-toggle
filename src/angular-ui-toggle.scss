@@ -1,71 +1,115 @@
-.ui-toggle {
-	background-color: #fff !important;
-	border: 1px solid #dfdfdf !important;
-	border-radius: 17px;
-	box-sizing: content-box;
-	cursor: pointer;
-	display: inline-block;
-	height: 34px;
-	position: relative;
-	transition: background 0.2s 0.05s ease-out,
-		border 0.2s 0.05s ease-in;
-	vertical-align: middle;
-	width: 60px;
-}
+//  --------------------------------------------------------------------------------
+//  Toggle switch
+//  --------------------------------------------------------------------------------
 
-.ui-toggle > input {
-	display: none;
-}
+    .ui-toggle {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 23px;
+        box-sizing: content-box;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: background 0.2s 0.05s ease-out,
+            border 0.2s 0.05s ease-in;
+        vertical-align: middle;
+    }
 
-.ui-toggle.checked {
-	background-color: #999 !important;
-	border-color: transparent !important;
-}
+    .ui-toggle > input {
+        display: none;
+    }
 
-.ui-toggle.checked.toggle-primary { background-color: #286090 !important }
-.ui-toggle.checked.toggle-success { background-color: #449d44 !important }
-.ui-toggle.checked.toggle-info    { background-color: #31b0d5 !important }
-.ui-toggle.checked.toggle-warning { background-color: #f0ad4e !important }
-.ui-toggle.checked.toggle-danger  { background-color: #d9534f !important }
-
-.ui-toggle::before {
-	background-color: #fff;
-	border-radius: 50%;
-	box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.4 );
-	content: '';
-	display: inline-block;
-	height: 34px;
-	left: 0;
-	position: absolute;
-	transition: transform 0.2s ease-out;
-	width: 34px;
-}
-
-.ui-toggle.toggle-xs,
-.ui-toggle.toggle-xs::before {
-	border-radius: 11px;
-	height: 22px;
-	width: 42px;
-}
-.ui-toggle.toggle-sm,
-.ui-toggle.toggle-sm::before {
-	border-radius: 15px;
-	height: 30px;
-	width: 52px;
-}
-.ui-toggle.toggle-lg,
-.ui-toggle.toggle-lg::before {
-	border-radius: 23px;
-	height: 46px;
-	width: 72px;
-}
-
-.ui-toggle.toggle-xs::before { width: 22px }
-.ui-toggle.toggle-sm::before { width: 30px }
-.ui-toggle.toggle-lg::before { width: 46px }
+    .ui-toggle::before {
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.45 );
+        content: '';
+        display: inline-block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        transition: transform 0.2s ease-out;
+    }
 
 
-.ui-toggle.checked::before { transform: translateX( 26px ) }
-.ui-toggle.checked.toggle-xs::before { transform: translateX( 20px ) }
-.ui-toggle.checked.toggle-sm::before { transform: translateX( 22px ) }
-.ui-toggle.checked.toggle-lg::before { transform: translateX( 26px ) }
+//  Styles -------------------------------------------------------------------------
+
+    .ui-toggle.checked {
+
+        // Default
+        & {
+            background-color: #999;
+            border-color: transparent;
+        }
+
+        &.toggle-primary { background-color: #286090 }
+        &.toggle-success { background-color: #449d44 }
+        &.toggle-info    { background-color: #31b0d5 }
+        &.toggle-warning { background-color: #f0ad4e }
+        &.toggle-danger  { background-color: #d9534f }
+
+    }
+
+
+
+//  Sizes --------------------------------------------------------------------------
+
+    // Extra small
+    .ui-toggle.toggle-xs {
+        height: 22px;
+        width: 42px;
+
+        &::before {
+            width: 22px;
+        }
+
+        &.checked::before {
+            transform: translateX( 20px );
+        }
+
+    }
+
+    // Small
+    .ui-toggle.toggle-sm {
+        height: 30px;
+        width: 52px;
+
+        &::before {
+            width: 30px;
+        }
+
+        &.checked::before {
+            transform: translateX( 22px );
+        }
+
+    }
+
+    // Default
+    .ui-toggle {
+        height: 34px;
+        width: 60px;
+
+        &::before {
+            width: 34px;
+        }
+
+        &.checked::before {
+            transform: translateX( 26px );
+        }
+
+    }
+
+    // Large
+    .ui-toggle.toggle-lg {
+        height: 46px;
+        width: 72px;
+
+        &::before {
+            width: 46px;
+        }
+
+        &.checked::before {
+            transform: translateX( 26px );
+        }
+
+    }

@@ -16,12 +16,10 @@ Alternatively, package is also available on [NPM](https://www.npmjs.com/package/
 
 2. Add a reference to the script and stylesheet in your HTML.
 ```html
-<!-- Stylesheet -->
-<head>
-    <link href="/yourDirectory/angular-ui-toggle-min.css" rel="stylesheet">
-</head>
+<link href="/yourDirectory/angular-ui-toggle-min.css" rel="stylesheet">
+```
 
-<!-- JavaScript -->
+```html
 <script src="/yourDirectory/angular-ui-toggle-min.js"></script>
 ```
 
@@ -40,16 +38,23 @@ var app = angular.module('app', [
 
 ## Usage
 
+Absolute bare minimum for a functioning toggle switch:
 ```html
-<!-- Absolute bare minimum -->
+<!-- Using element tag -->
 <ui-toggle ng-model="isEnabled"></ui-toggle>
 
-<!-- Other attributes -->
+<!-- Using attribute -->
+<span ui-toggle ng-model="isEnabled"></span>
+```
+
+Optional attributes:
+```html
 class=""
 disabled
 id=""
 name=""
 ```
+
 
 ### Toggle switch styles
 
@@ -69,6 +74,7 @@ name=""
 <!-- Danger (red) -->
 <ui-toggle class="toggle-danger"></ui-toggle>
 ```
+
 
 ### Toggle switch sizes
 
