@@ -55,19 +55,19 @@ name=""
 
 ```html
 <!-- Success (green) -->
-<ui-toggle class="btn-success"></ui-toggle>
+<ui-toggle class="toggle-success"></ui-toggle>
 
 <!-- Primary (deep blue) -->
-<ui-toggle class="btn-primary"></ui-toggle>
+<ui-toggle class="toggle-primary"></ui-toggle>
 
 <!-- Info (light blue) -->
-<ui-toggle class="btn-info"></ui-toggle>
+<ui-toggle class="toggle-info"></ui-toggle>
 
 <!-- Warning (orange) -->
-<ui-toggle class="btn-warning"></ui-toggle>
+<ui-toggle class="toggle-warning"></ui-toggle>
 
 <!-- Danger (red) -->
-<ui-toggle class="btn-danger"></ui-toggle>
+<ui-toggle class="toggle-danger"></ui-toggle>
 ```
 
 ### Toggle switch sizes

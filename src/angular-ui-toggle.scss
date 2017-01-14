@@ -22,11 +22,11 @@
 	border-color: transparent !important;
 }
 
-.ui-toggle.checked.btn-primary { background-color: #286090 !important }
-.ui-toggle.checked.btn-success { background-color: #449d44 !important }
-.ui-toggle.checked.btn-info    { background-color: #31b0d5 !important }
-.ui-toggle.checked.btn-warning { background-color: #f0ad4e !important }
-.ui-toggle.checked.btn-danger  { background-color: #d9534f !important }
+.ui-toggle.checked.toggle-primary { background-color: #286090 !important }
+.ui-toggle.checked.toggle-success { background-color: #449d44 !important }
+.ui-toggle.checked.toggle-info    { background-color: #31b0d5 !important }
+.ui-toggle.checked.toggle-warning { background-color: #f0ad4e !important }
+.ui-toggle.checked.toggle-danger  { background-color: #d9534f !important }
 
 .ui-toggle::before {
 	background-color: #fff;
