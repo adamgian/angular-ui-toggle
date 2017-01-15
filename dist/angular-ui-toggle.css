@@ -1,0 +1,112 @@
+.ui-toggle {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 23px;
+  box-sizing: content-box;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  -webkit-transition: background 0.2s 0.05s ease-out, border 0.2s 0.05s ease-in;
+  transition: background 0.2s 0.05s ease-out, border 0.2s 0.05s ease-in;
+  vertical-align: middle;
+}
+
+.ui-toggle > input {
+  display: none;
+}
+
+.ui-toggle::before {
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+  content: '';
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+.ui-toggle.checked {
+  background-color: #999;
+  border-color: transparent;
+}
+
+.ui-toggle.checked.toggle-primary {
+  background-color: #286090;
+}
+
+.ui-toggle.checked.toggle-success {
+  background-color: #449d44;
+}
+
+.ui-toggle.checked.toggle-info {
+  background-color: #31b0d5;
+}
+
+.ui-toggle.checked.toggle-warning {
+  background-color: #f0ad4e;
+}
+
+.ui-toggle.checked.toggle-danger {
+  background-color: #d9534f;
+}
+
+.ui-toggle.toggle-xs {
+  height: 22px;
+  width: 42px;
+}
+
+.ui-toggle.toggle-xs::before {
+  width: 22px;
+}
+
+.ui-toggle.toggle-xs.checked::before {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+}
+
+.ui-toggle.toggle-sm {
+  height: 30px;
+  width: 52px;
+}
+
+.ui-toggle.toggle-sm::before {
+  width: 30px;
+}
+
+.ui-toggle.toggle-sm.checked::before {
+  -webkit-transform: translateX(22px);
+          transform: translateX(22px);
+}
+
+.ui-toggle {
+  height: 34px;
+  width: 60px;
+}
+
+.ui-toggle::before {
+  width: 34px;
+}
+
+.ui-toggle.checked::before {
+  -webkit-transform: translateX(26px);
+          transform: translateX(26px);
+}
+
+.ui-toggle.toggle-lg {
+  height: 46px;
+  width: 72px;
+}
+
+.ui-toggle.toggle-lg::before {
+  width: 46px;
+}
+
+.ui-toggle.toggle-lg.checked::before {
+  -webkit-transform: translateX(26px);
+          transform: translateX(26px);
+}
