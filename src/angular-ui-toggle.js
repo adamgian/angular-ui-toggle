@@ -15,10 +15,6 @@ var uiToggle = {
         ngModel: '=',
     },
 
-    require: {
-        ngModel: 'ngModel'
-    },
-
     controller: function($scope, $attrs) {
         var $ctrl = this;
 
