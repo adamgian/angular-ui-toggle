@@ -7,7 +7,6 @@
         border: 1px solid #ddd;
         border-radius: 23px;
         box-sizing: content-box;
-        cursor: pointer;
         display: inline-block;
         position: relative;
         transition: background 0.2s 0.05s ease-out,
@@ -16,7 +15,11 @@
     }
 
     .ui-toggle > input {
-        display: none;
+        cursor: pointer;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        width: 100%;
     }
 
     .ui-toggle::before {
@@ -31,10 +34,14 @@
         transition: transform 0.2s ease-out;
     }
 
+    .ui-toggle[disabled] {
+        pointer-events: none;
+    }
+
 
 //  Styles -------------------------------------------------------------------------
 
-    .ui-toggle.checked {
+    .ui-toggle.is-active {
 
         // Default
         & {
@@ -63,7 +70,7 @@
             width: 22px;
         }
 
-        &.checked::before {
+        &.is-active::before {
             transform: translateX( 20px );
         }
 
@@ -78,7 +85,7 @@
             width: 30px;
         }
 
-        &.checked::before {
+        &.is-active::before {
             transform: translateX( 22px );
         }
 
@@ -93,7 +100,7 @@
             width: 34px;
         }
 
-        &.checked::before {
+        &.is-active::before {
             transform: translateX( 26px );
         }
 
@@ -108,7 +115,7 @@
             width: 46px;
         }
 
-        &.checked::before {
+        &.is-active::before {
             transform: translateX( 26px );
         }
 
