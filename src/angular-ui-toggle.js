@@ -12,7 +12,7 @@ var uiToggle = {
         id: '@?',
         name: '<?',
         ngChange: '&?',
-        ngModel: '=',
+        ngModel: '='
     },
 
     controller: function($scope, $attrs) {
@@ -30,7 +30,9 @@ var uiToggle = {
                 ng-class="[$ctrl.class, { 'is-active': $ctrl.ngModel }]"
                 ng-click="$ctrl.toggleState()"
                 >
-                <input
+                <input type="checkbox"
+                    ${ 'id' in $attrs && 'id="' + $attrs.id + '"' }
+                    ${ 'name' in $attrs && 'name="' + $attrs.name + '"' }
                     >
             </span>`;
     }
