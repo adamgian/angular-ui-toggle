@@ -1,8 +1,3 @@
-angular
-    .module('app', ['uiToggle'])
-    .controller('appCtrl', function($scope) {});
-
-
 /*
 * Toggle switch directive.
 *
