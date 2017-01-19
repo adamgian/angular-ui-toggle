@@ -12,6 +12,7 @@ var uiToggle = {
         id: '@?',
         name: '<?',
         ngChange: '&?',
+        ngDisabled: '=?',
         ngModel: '='
     },
 
@@ -33,7 +34,7 @@ var uiToggle = {
                     ${ 'id' in $attrs && 'id="' + $attrs.id + '"' }
                     ${ 'name' in $attrs && 'name="' + $attrs.name + '"' }
                     ng-model="$ctrl.ngModel"
-                    ng-disabled="${ 'disabled' in $attrs }"
+                    ng-disabled="$ctrl.ngDisabled || ${ 'disabled' in $attrs }"
                     >
                 <div class="ui-toggle__track"></div>
                 <div class="ui-toggle__thumb"></div>

@@ -9,7 +9,25 @@
         position: relative;
     }
 
-    // Toggle switch 'track'
+    // Disabled state overlay
+    //
+    // Simply a semi-transparent white overlay that lightens
+    // the toggle switch when it's disabled.
+    input[disabled] + .ui-toggle__track::before {
+        background-color: white;
+        border-radius: 23px;
+        content: '';
+        display: block;
+        height: calc( 100% + 2px );
+        left: -1px;
+        top: -1px;
+        opacity: 0.5;
+        position: absolute;
+        width: calc( 100% + 2px );
+        z-index: 1;
+    }
+
+    // Toggle switch track
     .ui-toggle__track {
         background-color: #f6f6f6;
         border: 1px solid #ccc;
@@ -43,21 +61,6 @@
 
         input[disabled] + & {
             background-color: white;
-
-            &::before {
-                background-color: white;
-                border-radius: 23px;
-                content: '';
-                display: block;
-                height: calc( 100% + 2px );
-                left: -1px;
-                top: -1px;
-                opacity: 0.5;
-                position: absolute;
-                width: calc( 100% + 2px );
-                z-index: 1;
-            }
-
         }
 
     }

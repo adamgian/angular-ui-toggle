@@ -38,6 +38,8 @@ var app = angular.module('app', [
 
 ## Usage
 
+Demo available on [Codepen](http://codepen.io/adamgian/pen/BpLwzJ)
+
 Absolute bare minimum for a functioning toggle switch:
 ```html
 <ui-toggle ng-model="isEnabled"></ui-toggle>
