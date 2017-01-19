@@ -23,6 +23,10 @@
             border 0.2s 0.05s ease-in;
         width: 100%;
 
+        input:focus + & {
+            box-shadow: 0 0 0 2px #9ecaed;
+        }
+
         input:checked + & {
             background-color: #999;
             border-color: transparent;
@@ -88,10 +92,6 @@
             height: 100%;
             margin: 0;
             width: 100%;
-        }
-
-        > input:focus {
-            outline: 1px solid red;
         }
 
         &.is-disabled > input {
