@@ -1,3 +1,8 @@
+angular
+    .module('app', ['uiToggle'])
+    .controller('appCtrl', function($scope) {});
+
+
 /*
 * Toggle switch directive.
 *
@@ -19,7 +24,6 @@ var uiToggle = {
         var $ctrl = this;
 
         $ctrl.toggleState = function() {
-            $ctrl.ngModel = !$ctrl.ngModel;
             if ($ctrl.ngChange) $scope.$eval($ctrl.ngChange);
         };
     },
@@ -27,12 +31,16 @@ var uiToggle = {
     template: function($attrs) {
         return `
             <span class="ui-toggle"
-                ng-class="[$ctrl.class, { 'is-active': $ctrl.ngModel }]"
+                ng-class="[$ctrl.class, {
+                    'is-active': $ctrl.ngModel,
+                    'is-disabled': ${ 'disabled' in $attrs }
+                    }]"
                 ng-click="$ctrl.toggleState()"
                 >
                 <input type="checkbox"
                     ${ 'id' in $attrs && 'id="' + $attrs.id + '"' }
                     ${ 'name' in $attrs && 'name="' + $attrs.name + '"' }
+                    ng-model="$ctrl.ngModel"
                     >
             </span>`;
     }

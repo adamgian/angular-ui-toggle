@@ -2,9 +2,10 @@
 //  Toggle switch
 //  --------------------------------------------------------------------------------
 
+    // Toggle switch 'track'
     .ui-toggle {
-        background-color: white;
-        border: 1px solid #ddd;
+        background-color: #f6f6f6;
+        border: 1px solid #ccc;
         border-radius: 23px;
         box-sizing: content-box;
         display: inline-block;
@@ -12,30 +13,62 @@
         transition: background 0.2s 0.05s ease-out,
             border 0.2s 0.05s ease-in;
         vertical-align: middle;
+
+        &.is-disabled {
+            background-color: white;
+            opacity: 0.75;
+        }
+
     }
 
-    .ui-toggle > input {
-        cursor: pointer;
-        height: 100%;
-        margin: 0;
-        opacity: 0;
-        width: 100%;
+    // Toggle switch thumb
+    .ui-toggle {
+
+        &::before {
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.33 );
+            content: '';
+            display: inline-block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            transition: transform 0.2s ease-out;
+        }
+
+        &.is-disabled::before {
+            box-shadow: none;
+            border: 1px solid #ccc;
+            margin-left: -1px;
+            margin-top: -1px;
+        }
+
+        &.is-active::before {
+            border: 0;
+            margin: 0;
+        }
+
     }
 
-    .ui-toggle::before {
-        background-color: white;
-        border-radius: 50%;
-        box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.45 );
-        content: '';
-        display: inline-block;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        transition: transform 0.2s ease-out;
-    }
+    // Checkbox input.
+    //
+    // Note: Hide visually so default input is 'removed' and custom styles
+    // can come through but it should still be able to interacted with
+    // (i.e. mouse, keyboard and screen readers)
+    .ui-toggle {
 
-    .ui-toggle[disabled] {
-        pointer-events: none;
+        > input {
+            cursor: pointer;
+            height: 100%;
+            margin: 0;
+            opacity: 0;
+            width: 100%;
+        }
+
+        &.is-disabled > input {
+            pointer-events: none;
+        }
+
     }
 
 
