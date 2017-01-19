@@ -26,17 +26,17 @@ var uiToggle = {
     template: function($attrs) {
         return `
             <span class="ui-toggle"
-                ng-class="[$ctrl.class, {
-                    'is-active': $ctrl.ngModel,
-                    'is-disabled': ${ 'disabled' in $attrs }
-                    }]"
+                ng-class="$ctrl.class"
                 ng-click="$ctrl.toggleState()"
                 >
                 <input type="checkbox"
                     ${ 'id' in $attrs && 'id="' + $attrs.id + '"' }
                     ${ 'name' in $attrs && 'name="' + $attrs.name + '"' }
                     ng-model="$ctrl.ngModel"
+                    ng-disabled="${ 'disabled' in $attrs }"
                     >
+                <div class="ui-toggle__track"></div>
+                <div class="ui-toggle__thumb"></div>
             </span>`;
     }
 

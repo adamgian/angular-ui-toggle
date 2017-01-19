@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h1>angular-ui-toggle</h1>
+
+<p>An Apple iOS inspired toggle switch input control for <a href="https://angularjs.org/">Angular 1</a> applications. This angular directive is extremely lightweight, not requiring a ton of dependencies (only Angular). Options to easily adjust the styling are provided via Bootstrap-like classes.</p>
+
+<figure>
+<img src="https://cloud.githubusercontent.com/assets/8142632/21925053/6f450396-d9c7-11e6-850a-73ca3b50bc42.gif" alt="iOS 7/8 Toggle switch" />
+<figcaption>iOS 7/8 Toggle switch</figcaption>
+</figure>
+
+<p><em>A recreation of the toggle switch in iOS 7/8. Source: <a href="https://dribbble.com/shots/1109255--GIF-iOS-7-switch-3">Dribble</a></em></p>
+
+<h2>Install</h2>
+
+<ol>
+<li><p>Download package directly from <a href="https://github.com/adamgian/angular-ui-toggle/archive/master.zip">Github</a>, unzip and place the files that are in <code>dist</code> (<code>angular-ui-toggle-min.js</code> and <code>angular-ui-toggle-min.css</code>) somewhere in your project directory.
+Alternatively, package is also available on <a href="https://www.npmjs.com/package/angular-ui-toggle">NPM</a>: <code>npm install angular-ui-toggle</code>.</p></li>
+<li><p>Add a reference to the script and stylesheet in your HTML.
+<code>html
+&lt;link href=&quot;/yourDirectory/angular-ui-toggle-min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</code></p></li>
+</ol>
+
+<pre><code class="html">&lt;script src=&quot;/yourDirectory/angular-ui-toggle-min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<ol>
+<li><p>Include module (<code>uiToggle</code>) in your Angular application.
+<code>js
+var app = angular.module('app', [
+'uiToggle',
+...
+]);
+</code></p></li>
+<li><p>angular-ui-toggle is now available for use – see usage section below for examples.</p></li>
+</ol>
+
+<h2>Usage</h2>
+
+<p>Absolute bare minimum for a functioning toggle switch:
+<code>html
+&lt;ui-toggle ng-model=&quot;isEnabled&quot;&gt;&lt;/ui-toggle&gt;
+</code></p>
+
+<p>Optional attributes:
+<code>html
+class=&quot;&quot;
+disabled
+id=&quot;&quot;
+name=&quot;&quot;
+</code></p>
+
+<h3>Toggle switch styles</h3>
+
+<pre><code class="html">&lt;!-- Success (green) --&gt;
+&lt;ui-toggle class=&quot;toggle-success&quot;&gt;&lt;/ui-toggle&gt;
+
+&lt;!-- Primary (deep blue) --&gt;
+&lt;ui-toggle class=&quot;toggle-primary&quot;&gt;&lt;/ui-toggle&gt;
+
+&lt;!-- Info (light blue) --&gt;
+&lt;ui-toggle class=&quot;toggle-info&quot;&gt;&lt;/ui-toggle&gt;
+
+&lt;!-- Warning (orange) --&gt;
+&lt;ui-toggle class=&quot;toggle-warning&quot;&gt;&lt;/ui-toggle&gt;
+
+&lt;!-- Danger (red) --&gt;
+&lt;ui-toggle class=&quot;toggle-danger&quot;&gt;&lt;/ui-toggle&gt;
+</code></pre>
+
+<h3>Toggle switch sizes</h3>
+
+<pre><code class="html">&lt;!-- Extra small --&gt;
+&lt;ui-toggle class=&quot;toggle-xs&quot;&gt;&lt;/ui-toggle&gt;
+
+&lt;!-- Small --&gt;
+&lt;ui-toggle class=&quot;toggle-sm&quot;&gt;&lt;/ui-toggle&gt;
+
+&lt;!-- Large --&gt;
+&lt;ui-toggle class=&quot;toggle-lg&quot;&gt;&lt;/ui-toggle&gt;
+</code></pre>
+
+</body>
+</html>

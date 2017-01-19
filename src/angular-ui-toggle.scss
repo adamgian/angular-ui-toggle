@@ -2,48 +2,73 @@
 //  Toggle switch
 //  --------------------------------------------------------------------------------
 
-    // Toggle switch 'track'
+    // Component container
     .ui-toggle {
+        box-sizing: border-box;
+        display: inline-block;
+        position: relative;
+    }
+
+    // Toggle switch 'track'
+    .ui-toggle__track {
         background-color: #f6f6f6;
         border: 1px solid #ccc;
         border-radius: 23px;
-        box-sizing: content-box;
-        display: inline-block;
-        position: relative;
+        box-sizing: border-box;
+        height: 100%;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
         transition: background 0.2s 0.05s ease-out,
             border 0.2s 0.05s ease-in;
-        vertical-align: middle;
+        width: 100%;
 
-        &.is-disabled {
+        input:checked + & {
+            background-color: #999;
+            border-color: transparent;
+        }
+
+        input[disabled] + & {
             background-color: white;
-            opacity: 0.75;
+
+            &::before {
+                background-color: white;
+                border-radius: 23px;
+                content: '';
+                display: block;
+                height: calc( 100% + 2px );
+                left: -1px;
+                top: -1px;
+                opacity: 0.5;
+                position: absolute;
+                width: calc( 100% + 2px );
+                z-index: 1;
+            }
+
         }
 
     }
 
     // Toggle switch thumb
-    .ui-toggle {
+    .ui-toggle__thumb {
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.33 );
+        content: '';
+        height: calc( 100% - 2px );
+        left: 1px;
+        pointer-events: none;
+        position: absolute;
+        top: 1px;
+        transition: transform 0.2s ease-out;
 
-        &::before {
-            background-color: white;
-            border-radius: 50%;
-            box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.33 );
-            content: '';
-            display: inline-block;
-            height: 100%;
-            left: 0;
-            position: absolute;
-            transition: transform 0.2s ease-out;
-        }
-
-        &.is-disabled::before {
+        input[disabled] ~ & {
             box-shadow: none;
             border: 1px solid #ccc;
-            margin-left: -1px;
-            margin-top: -1px;
+            margin: -1px;
         }
 
-        &.is-active::before {
+        input:checked ~ & {
             border: 0;
             margin: 0;
         }
@@ -52,17 +77,21 @@
 
     // Checkbox input.
     //
-    // Note: Hide visually so default input is 'removed' and custom styles
-    // can come through but it should still be able to interacted with
-    // (i.e. mouse, keyboard and screen readers)
+    // Note: Hide visually so default input is not visible and the custom
+    // input is visible. However, it should still be able to interacted with
+    // (i.e. mouse, keyboard and screen readers). This is achieved by
+    // placing the toggle switch in front and it having no pointer events.
     .ui-toggle {
 
         > input {
             cursor: pointer;
             height: 100%;
             margin: 0;
-            opacity: 0;
             width: 100%;
+        }
+
+        > input:focus {
+            outline: 1px solid red;
         }
 
         &.is-disabled > input {
@@ -74,19 +103,13 @@
 
 //  Styles -------------------------------------------------------------------------
 
-    .ui-toggle.is-active {
+    input:checked + .ui-toggle__track {
 
-        // Default
-        & {
-            background-color: #999;
-            border-color: transparent;
-        }
-
-        &.toggle-primary { background-color: #286090 }
-        &.toggle-success { background-color: #449d44 }
-        &.toggle-info    { background-color: #31b0d5 }
-        &.toggle-warning { background-color: #f0ad4e }
-        &.toggle-danger  { background-color: #d9534f }
+        .toggle-primary > & { background-color: #286090 }
+        .toggle-success > & { background-color: #449d44 }
+        .toggle-info > &    { background-color: #31b0d5 }
+        .toggle-warning > & { background-color: #f0ad4e }
+        .toggle-danger > &  { background-color: #d9534f }
 
     }
 
@@ -99,11 +122,11 @@
         height: 22px;
         width: 42px;
 
-        &::before {
-            width: 22px;
+        > .ui-toggle__thumb {
+            width: 20px;
         }
 
-        &.is-active::before {
+        > input:checked ~ .ui-toggle__thumb {
             transform: translateX( 20px );
         }
 
@@ -114,11 +137,11 @@
         height: 30px;
         width: 52px;
 
-        &::before {
-            width: 30px;
+        > .ui-toggle__thumb {
+            width: 28px;
         }
 
-        &.is-active::before {
+        > input:checked ~ .ui-toggle__thumb {
             transform: translateX( 22px );
         }
 
@@ -129,11 +152,11 @@
         height: 34px;
         width: 60px;
 
-        &::before {
-            width: 34px;
+        > .ui-toggle__thumb {
+            width: 32px;
         }
 
-        &.is-active::before {
+        > input:checked ~ .ui-toggle__thumb {
             transform: translateX( 26px );
         }
 
@@ -144,11 +167,11 @@
         height: 46px;
         width: 72px;
 
-        &::before {
-            width: 46px;
+        > .ui-toggle__thumb {
+            width: 44px;
         }
 
-        &.is-active::before {
+        > input:checked ~ .ui-toggle__thumb {
             transform: translateX( 26px );
         }
 
