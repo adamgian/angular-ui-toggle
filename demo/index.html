@@ -1,0 +1,120 @@
+<html>
+	<head>
+		<title>Angular-UI-Toggle</title>
+
+		<!-- Font-awesome -->
+		<link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+		<!-- jQuery -->
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+		<!-- Bootstrap -->
+		<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<!-- Angular -->
+		<script src="node_modules/angular/angular.min.js"></script>
+
+		<!-- Angular-UI-Toggle -->
+		<script src="dist/angular-ui-toggle.js"></script>
+		<link href="dist/angular-ui-toggle.css" rel="stylesheet" type="text/css"/>
+
+		<!-- Angular-UI-Toggle Demo -->
+		<script src="app.js"></script>
+	</head>
+	<body ng-app="app">
+		<a href="https://github.com/adamgian/angular-ui-toggle"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+		<div ng-controller="toggleExampleCtrl" class="container">
+
+			<h2>Angular-UI-Toggle</h2>
+
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Default setup</label>
+					<div class="col-sm-9 row">
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.default"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.default" class="toggle-lg"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.default" class="toggle-sm"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.default" class="toggle-xs"></ui-toggle>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Primary</label>
+					<div class="col-sm-9 row">
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.primary" class="toggle-primary"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.primary" class="toggle-lg toggle-primary"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.primary" class="toggle-sm toggle-primary"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.primary" class="toggle-xs toggle-primary"></ui-toggle>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Info</label>
+					<div class="col-sm-9 row">
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.info" class="toggle-info"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.info" class="toggle-lg toggle-info"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.info" class="toggle-sm toggle-info"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.info" class="toggle-xs toggle-info"></ui-toggle>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Warning</label>
+					<div class="col-sm-9 row">
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.warning" class="toggle-warning"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.warning" class="toggle-lg toggle-warning"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.warning" class="toggle-sm toggle-warning"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.warning" class="toggle-xs toggle-warning"></ui-toggle>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Danger</label>
+					<div class="col-sm-9 row">
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.danger" class="toggle-danger"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.danger" class="toggle-lg toggle-danger"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.danger" class="toggle-sm toggle-danger"></ui-toggle>
+						</div>
+						<div class="col-md-3">
+							<ui-toggle ng-model="data.danger" class="toggle-xs toggle-danger"></ui-toggle>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</body>
+</html>
