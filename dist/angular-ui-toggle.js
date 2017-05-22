@@ -1,5 +1,15 @@
 'use strict';
 
+/**
+* Angular-UI-Toggle
+* Display a simple UI-Toggle control
+*
+* @param {boolean} [ngModel] Model to bind to
+* @param {string} [class] Optional class style to apply
+* @param {boolean} [disabled=false] Whether to disable the toggle
+* @param {boolean} [ngDisabled=false] Alternate binding for `disabled`
+* @param {function} [ngChange] Function to call as ({value}) on value change
+*/
 angular.module('uiToggle', []).component('uiToggle', {
 	bindings: {
 		class: '@?',

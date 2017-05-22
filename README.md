@@ -77,3 +77,15 @@ Toggle sizes
 <!-- Large -->
 <ui-toggle class="toggle-lg"></ui-toggle>
 ```
+
+
+Directive Properties
+--------------------
+
+| Property     | Type       | Default   | Description                                   |
+|--------------|------------|-----------|-----------------------------------------------|
+| `ngModel`    | `boolean`  |           | Model to bind to                              |
+| `class`      | `string`   | `""`      | Optional class style to apply                 |
+| `disabled`   | `boolean`  | `false`   | Whether to disable the toggle                 |
+| `ngDisabled` | `boolean`  | `false`   | Alternate binding for `disabled`              |
+| `ngChange`   | `function` |           | Function to call as ({value}) on value change |
