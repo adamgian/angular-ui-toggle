@@ -82,6 +82,7 @@ input:checked ~ .ui-toggle__thumb {
   height: 100%;
   margin: 0;
   width: 100%;
+  zoom: 10; /* Strange fix for the checkbox still showing up in Chrome */
 }
 
 .ui-toggle.is-disabled > input {
