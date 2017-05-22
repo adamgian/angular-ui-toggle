@@ -1,11 +1,11 @@
 {
-  "name": "angular-ui-toggle",
+  "name": "@momsfriendlydevco/angular-ui-toggle",
   "author": "Adam Gian (https://github.com/adamgian)",
   "contributors": [
     "Matt Carter <m@ttcarter.com> (https://github.com/hash-bang)"
   ],
   "license": "MIT",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "main": "angular-ui-toggle.js",
   "repository": {
     "type": "git",
