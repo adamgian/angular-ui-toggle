@@ -5,7 +5,7 @@
     "Matt Carter <m@ttcarter.com> (https://github.com/hash-bang)"
   ],
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "angular-ui-toggle.js",
   "repository": {
     "type": "git",
