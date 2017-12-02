@@ -27,7 +27,6 @@ input[disabled] + .ui-toggle__track::before {
 	pointer-events: none;
 	position: absolute;
 	top: 0;
-	-webkit-transition: background 0.2s 0.05s ease-out, border 0.2s 0.05s ease-in, box-shadow 0.2s ease-in-out;
 	transition: background 0.2s 0.05s ease-out, border 0.2s 0.05s ease-in, box-shadow 0.2s ease-in-out;
 	width: 100%;
 }
@@ -60,10 +59,7 @@ input[disabled] + .ui-toggle__track {
 	pointer-events: none;
 	position: absolute;
 	top: 1px;
-	-webkit-transition: -webkit-transform 0.2s ease-out;
-	transition: -webkit-transform 0.2s ease-out;
 	transition: transform 0.2s ease-out;
-	transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
 input[disabled] ~ .ui-toggle__thumb {
@@ -81,8 +77,9 @@ input:checked ~ .ui-toggle__thumb {
 	cursor: pointer;
 	height: 100%;
 	margin: 0;
+	opacity: 0;
+	vertical-align: top;
 	width: 100%;
-	zoom: 10; /* Strange fix for the checkbox still showing up in Chrome */
 }
 
 .ui-toggle.is-disabled > input {
@@ -119,8 +116,7 @@ input:checked ~ .ui-toggle__thumb {
 }
 
 .ui-toggle.toggle-xs > input:checked ~ .ui-toggle__thumb {
-	-webkit-transform: translateX(20px);
-					transform: translateX(20px);
+	transform: translateX(20px);
 }
 
 .ui-toggle.toggle-sm {
@@ -133,8 +129,7 @@ input:checked ~ .ui-toggle__thumb {
 }
 
 .ui-toggle.toggle-sm > input:checked ~ .ui-toggle__thumb {
-	-webkit-transform: translateX(22px);
-					transform: translateX(22px);
+	transform: translateX(22px);
 }
 
 .ui-toggle {
@@ -147,8 +142,7 @@ input:checked ~ .ui-toggle__thumb {
 }
 
 .ui-toggle > input:checked ~ .ui-toggle__thumb {
-	-webkit-transform: translateX(26px);
-					transform: translateX(26px);
+	transform: translateX(26px);
 }
 
 .ui-toggle.toggle-lg {
@@ -161,6 +155,5 @@ input:checked ~ .ui-toggle__thumb {
 }
 
 .ui-toggle.toggle-lg > input:checked ~ .ui-toggle__thumb {
-	-webkit-transform: translateX(26px);
-					transform: translateX(26px);
+	transform: translateX(26px);
 }
