@@ -36,11 +36,10 @@ angular
       });
 
       $scope.disabled = function () {
-        return $ctrl.ngDisabled || $ctrl.$attrs.disabled !== undefined;
+        return $ctrl.$attrs.disabled !== undefined;
       };
 
       $ctrl.toggleState = function () {
-        console.log('toggle');
         if ($scope.disabled()) return;
         $ctrl.value = !$ctrl.value;
         $ctrl.ngModel.$setViewValue($ctrl.value);
