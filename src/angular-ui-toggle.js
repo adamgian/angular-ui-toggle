@@ -14,8 +14,7 @@ angular
     bindings: {
       class: '@?',
       disabled: '<?',
-      ngChange: '&?',
-      //ngDisabled: '<',
+      ngChange: '&?'
     },
     require: {
       ngModel: 'ngModel'
@@ -44,7 +43,6 @@ angular
         console.log('toggle');
         if ($scope.disabled()) return;
         $ctrl.value = !$ctrl.value;
-        //if ($ctrl.ngChange) $ctrl.ngChange({ value: $ctrl.value });
         $ctrl.ngModel.$setViewValue($ctrl.value);
       };
 
