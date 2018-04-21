@@ -15,7 +15,7 @@ angular
       class: '@?',
       disabled: '<?',
       ngChange: '&?',
-      ngDisabled: '<',
+      //ngDisabled: '<',
     },
     require: {
       ngModel: 'ngModel'
@@ -23,36 +23,35 @@ angular
     controller: function($scope, $attrs) {
 
       var $ctrl = this;
-      var prev = false;
 
       $ctrl.$attrs = $attrs || {};
-      $ctrl.value = prev;
+      $ctrl.value = null;
 
       $scope.$watch(function () {
-        return $ctrl.ngModel.$modelValue;
+        if ($ctrl.ngModel)
+          return $ctrl.ngModel.$modelValue;
       }, function (val) {
         if (val !== $ctrl.value) {
-          prev = val;
           $ctrl.value = val;
         }
       });
 
+      $scope.disabled = function () {
+        return $ctrl.ngDisabled || $ctrl.$attrs.disabled !== undefined;
+      };
+
       $ctrl.toggleState = function () {
-        if ($ctrl.value === prev) {
-          $ctrl.value = !$ctrl.value;
-        }
-        prev = $ctrl.value;
-        if ($ctrl.ngChange) $ctrl.ngChange({ value: $ctrl.value });
+        console.log('toggle');
+        if ($scope.disabled()) return;
+        $ctrl.value = !$ctrl.value;
+        //if ($ctrl.ngChange) $ctrl.ngChange({ value: $ctrl.value });
         $ctrl.ngModel.$setViewValue($ctrl.value);
       };
 
     },
     template: `
     <span class="ui-toggle" ng-class="$ctrl.class" ng-click="$ctrl.toggleState()">
-    <input type="checkbox"
-    ng-model="$ctrl.value"
-    ng-disabled="$ctrl.ngDisabled || $ctrl.$attrs.disabled !== undefined"
-    />
+    <span class="ui-toggle-input" ng-class="{checked: $ctrl.value, disabled: disabled()}"></span>
     <div class="ui-toggle__track"></div>
     <div class="ui-toggle__thumb"></div>
     </span>
