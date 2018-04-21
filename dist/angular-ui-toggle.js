@@ -31,14 +31,11 @@ angular.module('uiToggle', []).component('uiToggle', {
       return $ctrl.ngModel.$modelValue;
     }, function (val, prev) {
       if (val !== $ctrl.value) {
-        console.log('val: ', val);
         $ctrl.value = val;
       }
     });
 
     $ctrl.toggleState = function () {
-      //$ctrl.value = !$ctrl.value;
-      console.log('toggle', $ctrl.value);
       if ($ctrl.ngChange) $ctrl.ngChange({ value: $ctrl.value });
       $ctrl.ngModel.$setViewValue($ctrl.value);
     };
