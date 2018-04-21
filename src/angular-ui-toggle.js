@@ -51,7 +51,7 @@ angular
     <span class="ui-toggle" ng-class="$ctrl.class" ng-click="$ctrl.toggleState()">
     <input type="checkbox"
     ng-model="$ctrl.value"
-    ng-disabled="$ctrl.ngDisabled"
+    ng-disabled="$ctrl.ngDisabled || $ctrl.$attrs.disabled !== undefined"
     />
     <div class="ui-toggle__track"></div>
     <div class="ui-toggle__thumb"></div>
