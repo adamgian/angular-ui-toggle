@@ -14,7 +14,7 @@ angular.module('uiToggle', []).component('uiToggle', {
   bindings: {
     class: '@?',
     disabled: '<?',
-    ngChange: '&?'
+    ngDisabled: '<?'
   },
   require: {
     ngModel: 'ngModel'
@@ -35,7 +35,7 @@ angular.module('uiToggle', []).component('uiToggle', {
     });
 
     $scope.disabled = function () {
-      return $ctrl.$attrs.disabled !== undefined;
+      return $ctrl.ngDisabled !== undefined ? $ctrl.ngDisabled : $ctrl.$attrs.disabled !== undefined;
     };
 
     $ctrl.toggleState = function () {
