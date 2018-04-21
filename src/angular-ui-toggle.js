@@ -36,16 +36,16 @@ angular
       });
 
       $ctrl.toggleState = function () {
-        $ctrl.value = !$ctrl.value;
         if ($ctrl.ngChange) $ctrl.ngChange({ value: $ctrl.value });
         $ctrl.ngModel.$setViewValue($ctrl.value);
       };
 
     },
     template: `
+    value: {{$ctrl.value}} <br>
     <span class="ui-toggle" ng-class="$ctrl.class" ng-click="$ctrl.toggleState()">
     <input type="checkbox"
-    ng-model="$ctrl.ngModel"
+    ng-model="$ctrl.value"
     ng-disabled="$ctrl.ngDisabled"
     />
     <div class="ui-toggle__track"></div>
