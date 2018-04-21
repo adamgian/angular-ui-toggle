@@ -23,19 +23,25 @@ angular
     controller: function($scope, $attrs) {
 
       var $ctrl = this;
+      var prev = false;
 
       $ctrl.$attrs = $attrs || {};
-      $ctrl.value = false;
+      $ctrl.value = prev;
 
       $scope.$watch(function () {
         return $ctrl.ngModel.$modelValue;
-      }, function (val, prev) {
+      }, function (val) {
         if (val !== $ctrl.value) {
+          prev = val;
           $ctrl.value = val;
         }
       });
 
       $ctrl.toggleState = function () {
+        if ($ctrl.value === prev) {
+          $ctrl.value = !$ctrl.value;
+        }
+        prev = $ctrl.value;
         if ($ctrl.ngChange) $ctrl.ngChange({ value: $ctrl.value });
         $ctrl.ngModel.$setViewValue($ctrl.value);
       };
