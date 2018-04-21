@@ -48,7 +48,6 @@ angular
 
     },
     template: `
-    value: {{$ctrl.value}} <br>
     <span class="ui-toggle" ng-class="$ctrl.class" ng-click="$ctrl.toggleState()">
     <input type="checkbox"
     ng-model="$ctrl.value"

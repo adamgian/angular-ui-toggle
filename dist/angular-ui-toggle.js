@@ -46,5 +46,5 @@ angular.module('uiToggle', []).component('uiToggle', {
       $ctrl.ngModel.$setViewValue($ctrl.value);
     };
   }],
-  template: '\n    value: {{$ctrl.value}} <br>\n    <span class="ui-toggle" ng-class="$ctrl.class" ng-click="$ctrl.toggleState()">\n    <input type="checkbox"\n    ng-model="$ctrl.value"\n    ng-disabled="$ctrl.ngDisabled"\n    />\n    <div class="ui-toggle__track"></div>\n    <div class="ui-toggle__thumb"></div>\n    </span>\n    '
+  template: '\n    <span class="ui-toggle" ng-class="$ctrl.class" ng-click="$ctrl.toggleState()">\n    <input type="checkbox"\n    ng-model="$ctrl.value"\n    ng-disabled="$ctrl.ngDisabled"\n    />\n    <div class="ui-toggle__track"></div>\n    <div class="ui-toggle__thumb"></div>\n    </span>\n    '
 });
