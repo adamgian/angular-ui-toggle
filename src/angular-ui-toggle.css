@@ -2,9 +2,10 @@
 	box-sizing: border-box;
 	display: inline-block;
 	position: relative;
+  cursor: pointer;
 }
 
-input[disabled] + .ui-toggle__track::before {
+span.ui-toggle-input.disabled + .ui-toggle__track::before {
 	background-color: white;
 	border-radius: 23px;
 	content: '';
@@ -31,21 +32,21 @@ input[disabled] + .ui-toggle__track::before {
 	width: 100%;
 }
 
-input:focus + .ui-toggle__track {
+span.ui-toggle-input:focus + .ui-toggle__track {
 	box-shadow: 0 0 0 2px #9ecaed;
 }
 
-input:active + .ui-toggle__track,
-input:hover + .ui-toggle__track {
+span.ui-toggle-input:active + .ui-toggle__track,
+span.ui-toggle-input:hover + .ui-toggle__track {
 	box-shadow: none;
 }
 
-input:checked + .ui-toggle__track {
+span.ui-toggle-input.checked + .ui-toggle__track {
 	background-color: #999;
 	border-color: transparent;
 }
 
-input[disabled] + .ui-toggle__track {
+span.ui-toggle-input.disabled + .ui-toggle__track {
 	background-color: white;
 }
 
@@ -62,18 +63,18 @@ input[disabled] + .ui-toggle__track {
 	transition: transform 0.2s ease-out;
 }
 
-input[disabled] ~ .ui-toggle__thumb {
+span.ui-toggle-input.disabled ~ .ui-toggle__thumb {
 	box-shadow: none;
 	border: 1px solid #ccc;
 	margin: -1px;
 }
 
-input:checked ~ .ui-toggle__thumb {
+span.ui-toggle-input.checked ~ .ui-toggle__thumb {
 	border: 0;
 	margin: 0;
 }
 
-.ui-toggle > input {
+.ui-toggle > span.ui-toggle-input {
 	cursor: pointer;
 	height: 100%;
 	margin: 0;
@@ -82,27 +83,27 @@ input:checked ~ .ui-toggle__thumb {
 	width: 100%;
 }
 
-.ui-toggle.is-disabled > input {
+.ui-toggle.is-disabled > span.ui-toggle-input {
 	pointer-events: none;
 }
 
-.toggle-primary > input:checked + .ui-toggle__track {
+.toggle-primary > span.ui-toggle-input.checked + .ui-toggle__track {
 	background-color: #286090;
 }
 
-.toggle-success > input:checked + .ui-toggle__track {
+.toggle-success > span.ui-toggle-input.checked + .ui-toggle__track {
 	background-color: #449d44;
 }
 
-.toggle-info > input:checked + .ui-toggle__track {
+.toggle-info > span.ui-toggle-input.checked + .ui-toggle__track {
 	background-color: #31b0d5;
 }
 
-.toggle-warning > input:checked + .ui-toggle__track {
+.toggle-warning > span.ui-toggle-input.checked + .ui-toggle__track {
 	background-color: #f0ad4e;
 }
 
-.toggle-danger > input:checked + .ui-toggle__track {
+.toggle-danger > span.ui-toggle-input.checked + .ui-toggle__track {
 	background-color: #d9534f;
 }
 
@@ -115,7 +116,7 @@ input:checked ~ .ui-toggle__thumb {
 	width: 20px;
 }
 
-.ui-toggle.toggle-xs > input:checked ~ .ui-toggle__thumb {
+.ui-toggle.toggle-xs > span.ui-toggle-input.checked ~ .ui-toggle__thumb {
 	transform: translateX(20px);
 }
 
@@ -128,7 +129,7 @@ input:checked ~ .ui-toggle__thumb {
 	width: 28px;
 }
 
-.ui-toggle.toggle-sm > input:checked ~ .ui-toggle__thumb {
+.ui-toggle.toggle-sm > span.ui-toggle-input.checked ~ .ui-toggle__thumb {
 	transform: translateX(22px);
 }
 
@@ -141,7 +142,7 @@ input:checked ~ .ui-toggle__thumb {
 	width: 32px;
 }
 
-.ui-toggle > input:checked ~ .ui-toggle__thumb {
+.ui-toggle > span.ui-toggle-input.checked ~ .ui-toggle__thumb {
 	transform: translateX(26px);
 }
 
@@ -154,6 +155,6 @@ input:checked ~ .ui-toggle__thumb {
 	width: 44px;
 }
 
-.ui-toggle.toggle-lg > input:checked ~ .ui-toggle__thumb {
+.ui-toggle.toggle-lg > span.ui-toggle-input.checked ~ .ui-toggle__thumb {
 	transform: translateX(26px);
 }
