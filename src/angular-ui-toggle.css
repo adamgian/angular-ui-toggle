@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 	display: inline-block;
 	position: relative;
-  cursor: pointer;
+	cursor: pointer;
 }
 
 span.ui-toggle-input.disabled + .ui-toggle__track::before {

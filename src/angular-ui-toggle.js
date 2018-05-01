@@ -9,50 +9,45 @@
  * @param {function} [ngChange] Function to call as ({value}) on value change
  */
 angular
-  .module('uiToggle', [])
-  .component('uiToggle', {
-    bindings: {
-      class: '@?',
-      disabled: '<?',
-      ngDisabled: '<?'
-    },
-    require: {
-      ngModel: 'ngModel'
-    },
-    controller: function($scope, $attrs) {
+	.module('uiToggle', [])
+	.component('uiToggle', {
+		bindings: {
+			class: '@?',
+			disabled: '<?',
+			ngDisabled: '<?'
+		},
+		require: {
+			ngModel: 'ngModel'
+		},
+		controller: function($scope, $attrs) {
 
-      var $ctrl = this;
+			var $ctrl = this;
 
-      $ctrl.$attrs = $attrs || {};
-      $ctrl.value = null;
+			$ctrl.$attrs = $attrs || {};
+			$ctrl.value = null;
 
-      $scope.$watch(function () {
-        if ($ctrl.ngModel)
-          return $ctrl.ngModel.$modelValue;
-      }, function (val) {
-        if (val !== $ctrl.value) {
-          $ctrl.value = val;
-        }
-      });
+			$scope.$watch(()=> $ctrl.ngModel ? $ctrl.ngModel.$modelValue : undefined, val => {
+				if (val !== $ctrl.value) $ctrl.value = val;
+			});
 
-      $scope.disabled = function () {
-        return $ctrl.ngDisabled !== undefined
-          ? $ctrl.ngDisabled
-          : $ctrl.$attrs.disabled !== undefined;
-      };
+			$scope.disabled = function () {
+				return $ctrl.ngDisabled !== undefined
+					? $ctrl.ngDisabled
+					: $ctrl.$attrs.disabled !== undefined;
+			};
 
-      $ctrl.toggleState = function () {
-        if ($scope.disabled()) return;
-        $ctrl.value = !$ctrl.value;
-        $ctrl.ngModel.$setViewValue($ctrl.value);
-      };
+			$ctrl.toggleState = function () {
+				if ($scope.disabled()) return;
+				$ctrl.value = !$ctrl.value;
+				$ctrl.ngModel.$setViewValue($ctrl.value);
+			};
 
-    },
-    template: `
-    <span class="ui-toggle" ng-class="$ctrl.class" ng-click="$ctrl.toggleState()">
-    <span class="ui-toggle-input" ng-class="{checked: $ctrl.value, disabled: disabled()}"></span>
-    <div class="ui-toggle__track"></div>
-    <div class="ui-toggle__thumb"></div>
-    </span>
-    `,
-  });
+		},
+		template: `
+			<span class="ui-toggle" ng-class="$ctrl.class" ng-click="$ctrl.toggleState()">
+				<span class="ui-toggle-input" ng-class="{checked: $ctrl.value, disabled: disabled()}"></span>
+				<div class="ui-toggle__track"></div>
+				<div class="ui-toggle__thumb"></div>
+			</span>
+		`,
+	});
